@@ -1,7 +1,25 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
-}
+const qs = (e) => document.querySelector(e);
 
-document.addEventListener('DOMContentLoaded', main)
+let playerOne = '';
+let playerTwo = '';
+
+const playerOnePicksRock = () => {
+	console.log('rock');
+	qs('.playerOneSelection').textContent = 'Rock';
+};
+
+const playerOnePicksPaper = () => {
+	console.log('paper');
+	qs('.playerOneSelection').textContent = 'Paper';
+};
+
+const playerOnePicksScissors = () => {
+	console.log('scissors');
+	qs('.playerOneSelection').textContent = 'Scissors';
+};
+
+const main = () => {
+	qs('.playerOne.rock').addEventListener('click', playerOnePicksRock);
+};
+
+document.addEventListener('DOMContentLoaded', main);
